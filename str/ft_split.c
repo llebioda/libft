@@ -6,28 +6,28 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:09:02 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/17 10:16:58 by llebioda         ###   ########.fr       */
+/*   Updated: 2024/12/23 13:50:22 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	split_str(char **tab, char const *str, char sep, int tab_len);
+static int	split_str(char **tab, char const *str, char *sep, int tab_len);
 static int	copy(char **tab, char const *str, int *offset, int *len);
-static int	count(char const *str, char sep);
+static int	count(char const *str, char *sep);
 static char	*ft_strndup(char const *src, unsigned int n);
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char *set)
 {
 	char	**tab;
 	int		tab_len;
 	int		i;
 
-	tab_len = count(s, c) + 1;
+	tab_len = count(s, set) + 1;
 	tab = ft_calloc(tab_len + 1, sizeof(char *));
 	if (tab == NULL)
 		return (NULL);
-	if (split_str(tab, s, c, tab_len) == 0)
+	if (split_str(tab, s, set, tab_len) == 0)
 	{
 		i = 0;
 		while (i < tab_len)
@@ -45,7 +45,7 @@ char	**ft_split(char const *s, char c)
 	return (tab);
 }
 
-static int	split_str(char **tab, char const *str, char sep, int tab_len)
+static int	split_str(char **tab, char const *str, char *sep, int tab_len)
 {
 	char	*s;
 	int		i;
@@ -58,7 +58,7 @@ static int	split_str(char **tab, char const *str, char sep, int tab_len)
 	len = 0;
 	while (*s && i < tab_len)
 	{
-		if (*s++ == sep)
+		if (ft_strcontains(sep, *s++) == 1)
 		{
 			if (len > 0 && !copy(&(tab[i++]), str, &offset, &len))
 				return (0);
@@ -84,18 +84,18 @@ static int	copy(char **tab, char const *str, int *offset, int *len)
 	return (1);
 }
 
-static int	count(char const *str, char sep)
+static int	count(char const *str, char *sep)
 {
 	int	count;
 	int	was_split;
 
-	if (sep == '\0')
+	if (sep == NULL || *sep == '\0')
 		return (0);
 	count = 0;
 	was_split = 1;
 	while (*str)
 	{
-		if (*str == sep)
+		if (ft_strcontains(sep, *str) == 1)
 		{
 			if (was_split == 0)
 				count++;

@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcontains.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 09:30:22 by llebioda          #+#    #+#             */
-/*   Updated: 2024/11/15 17:39:40 by llebioda         ###   ########.fr       */
+/*   Created: 2024/12/23 13:43:09 by llebioda          #+#    #+#             */
+/*   Updated: 2024/12/23 13:45:31 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strcontains(char *str, char c)
 {
-	if (n == 0)
+	if (!str)
 		return (0);
-	while (*s1 && *s1 == *s2 && n > 1)
+	while (*str)
 	{
-		s1++;
-		s2++;
-		n--;
+		if (*str == c)
+			return (1);
+		str++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	if (*str == c)
+		return (1);
+	return (0);
 }
