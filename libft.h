@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/23 10:49:11 by llebioda         ###   ########.fr       */
+/*   Updated: 2024/12/23 11:12:25 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t siz);
 size_t	ft_strlcat(char *dst, const char *src, size_t siz);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
@@ -39,12 +40,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
+void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_atoi(const char *nptr);
 char	*ft_itoa(int n);
 
 char	*ft_strdup(const char *s);
-void	*ft_calloc(size_t nmemb, size_t size);
-
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
@@ -60,6 +60,9 @@ int		ft_abs(int value);
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);
 int		ft_clamp(int value, int min, int max);
+int		*ft_range(int min, int max);
+int		ft_factorial(int nb);
+int		ft_power(int nb, int power);
 
 typedef struct s_list
 {
