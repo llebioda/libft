@@ -1,55 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strremove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 14:45:20 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/23 18:22:38 by llebioda         ###   ########.fr       */
+/*   Created: 2024/12/23 18:07:53 by llebioda          #+#    #+#             */
+/*   Updated: 2024/12/23 18:24:01 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count(char const *str, char const *set)
+static size_t	get_count(const char *str, const char *set)
 {
-	int	i;
-	int	last_i;
+	size_t	i;
 
+	if (str == NULL || set == NULL)
+		return (-1);
 	i = 0;
-	last_i = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (ft_strcontains(set, str[i]) == 0)
-			last_i = i;
-		i++;
+		if (ft_strcontains(set, *str) == 0)
+			i++;
+		str++;
 	}
-	return (last_i + 1);
+	return (i);
 }
 
-char	*ft_strtrim(char const *str, char const *set)
+char	*ft_strremove(const char *str, const char *set)
 {
-	char	*dst;
-	int		len;
+	char	*s;
+	size_t	len;
 	int		i;
 
 	if (str == NULL)
 		return (NULL);
-	if (set == NULL)
+	len = get_count(str, set);
+	if (len == -1 || len == ft_strlen(str))
 		return (ft_strdup(str));
-	while (ft_strcontains(set, *str) == 1)
-		str++;
-	len = count(str, set);
-	dst = malloc(len + 1);
-	if (dst == NULL)
+	s = ft_calloc(len + 1, sizeof(char));
+	if (s == NULL)
 		return (NULL);
 	i = 0;
-	while (i < len)
+	while (*str)
 	{
-		dst[i] = str[i];
-		i++;
+		if (ft_strcontains(set, *str) == 0)
+			s[i++] = *str;
+		str++;
 	}
-	dst[i] = '\0';
-	return (dst);
+	return (s);
 }
