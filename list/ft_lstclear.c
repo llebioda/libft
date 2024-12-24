@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 16:41:51 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/17 10:16:35 by llebioda         ###   ########.fr       */
+/*   Updated: 2024/12/24 06:12:43 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*ls;
 	t_list	*temp;
 
-	if (del == NULL)
+	if (lst == NULL)
 		return ;
 	ls = *lst;
 	while (ls != NULL)
 	{
-		(*del)(ls->content);
+		if (del != NULL)
+			(*del)(ls->content);
 		temp = ls->next;
 		free(ls);
 		ls = temp;
