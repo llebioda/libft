@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 09:31:34 by llebioda          #+#    #+#             */
-/*   Updated: 2024/11/06 16:37:40 by llebioda         ###   ########.fr       */
+/*   Updated: 2024/12/25 12:16:35 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	if (!s)
 		return (s);
-	v = c;
+	v = (char)c;
 	i = 0;
 	while (i < n)
 	{
-		((char *)s)[i] = c;
+		((char *)s)[i] = v;
 		i++;
 	}
 	return (s);
