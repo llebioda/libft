@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:08:51 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/23 15:00:37 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 11:18:06 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,34 @@ char	*ft_strjoin3(char const *s1, char const *s2, char const *s3)
 		i++;
 	}
 	dst[len_s1 + len_s2 + len_s3] = '\0';
+	return (dst);
+}
+
+char	*ft_strjoin_all(char const **tab, char const *sep)
+{
+	char	*dst;
+	size_t	total_len;
+	int		i;
+	size_t	j;
+
+	if (tab == NULL || *tab == NULL)
+		return (ft_strdup(""));
+	total_len = 0;
+	i = 0;
+	while (tab[i] != NULL)
+		total_len += ft_strlen(tab[i++]);
+	if (sep != NULL)
+		total_len += ft_strlen(sep) * (i - 1);
+	dst = ft_calloc(total_len + 1, sizeof(char));
+	if (dst == NULL)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (tab[i] != NULL)
+	{
+		j += ft_strlcpy(&(dst[j]), tab[i++], total_len - j + 1);
+		if (j <= total_len && sep != NULL)
+			j += ft_strlcpy(&(dst[j]), sep, total_len - j + 1);
+	}
 	return (dst);
 }
