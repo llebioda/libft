@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCSFILES =	ft_atoi.c ft_itoa.c ft_bzero.c ft_calloc.c ft_utils.c ft_utils2.c \
+SRCSFILES =	ft_atoi.c ft_atol.c ft_itoa.c ft_bzero.c ft_calloc.c ft_utils.c ft_utils2.c \
 			char/ft_isalnum.c char/ft_isalpha.c char/ft_isascii.c char/ft_isdigit.c char/ft_isprint.c char/ft_isspace.c char/ft_tolower.c char/ft_toupper.c \
 			mem/ft_memchr.c mem/ft_memcmp.c mem/ft_memcpy.c mem/ft_memmove.c mem/ft_memset.c \
 			ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c \

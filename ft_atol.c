@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:35:11 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/02 10:18:14 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 10:18:13 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long	ft_atol(const char *nptr)
 {
-	int	a;
-	int	is_negative;
+	long	a;
+	int		is_negative;
 
 	if (nptr == NULL)
 		return (0);
@@ -37,7 +37,7 @@ int	ft_atoi(const char *nptr)
 	return (a);
 }
 
-static int	check_int_overflow(const char *nptr, int is_negative)
+static int	check_long_overflow(const char *nptr, int is_negative)
 {
 	int	len;
 
@@ -55,11 +55,11 @@ static int	check_int_overflow(const char *nptr, int is_negative)
 	if (len < 10)
 		return (1);
 	if (is_negative == 1)
-		return (ft_strncmp(nptr, "2147483648", 10) <= 0);
-	return (ft_strncmp(nptr, "2147483647", 10) <= 0);
+		return (ft_strncmp(nptr, "9223372036854775808", 19) <= 0);
+	return (ft_strncmp(nptr, "9223372036854775807", 19) <= 0);
 }
 
-int	ft_atoi_valid(const char *nptr)
+int	ft_atol_valid(const char *nptr)
 {
 	int	is_negative;
 
@@ -72,12 +72,12 @@ int	ft_atoi_valid(const char *nptr)
 		is_negative = 1;
 	if (*nptr == '+' || *nptr == '-')
 		nptr++;
-	return (check_int_overflow(nptr, is_negative));
+	return (check_long_overflow(nptr, is_negative));
 }
 
-int	ft_atoi_safe(const char *nptr, int error_ret_val)
+long	ft_atol_safe(const char *nptr, long error_ret_val)
 {
-	if (ft_atoi_valid(nptr) == 0)
+	if (ft_atol_valid(nptr) == 0)
 		return (error_ret_val);
-	return (ft_atoi(nptr));
+	return (ft_atol(nptr));
 }
