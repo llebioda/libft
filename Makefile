@@ -8,7 +8,7 @@ SRCSFILES =	ft_atoi.c ft_atol.c ft_itoa.c ft_bzero.c ft_calloc.c ft_utils.c ft_u
 			str/ft_split.c str/ft_strcontains.c str/ft_strchr.c str/ft_strdup.c str/ft_striteri.c str/ft_strjoin.c str/ft_strcat.c str/ft_strcpy.c \
 			str/ft_strlen.c str/ft_strmapi.c str/ft_strcmp.c str/ft_strnstr.c str/ft_strrchr.c str/ft_strtrim.c str/ft_substr.c str/ft_strremove.c \
 			list/ft_lstnew.c list/ft_lstadd_front.c list/ft_lstsize.c list/ft_lstlast.c list/ft_lstadd_back.c \
-			list/ft_lstdelone.c list/ft_lstclear.c list/ft_lstiter.c list/ft_lstmap.c list/ft_lst_utils.c \
+			list/ft_lstdelone.c list/ft_lstclear.c list/ft_lstiter.c list/ft_lstmap.c list/ft_lst_utils.c list/ft_lstfirst_occurence.c \
 			gnl/get_next_line.c
 
 SRCDIR = ./

@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/02 11:16:48 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 12:41:24 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 void	*ft_lstpop(t_list **lst, int index);
 t_list	*ft_lstinsert(t_list **lst, int index, void *content);
+
+t_list	*ft_lstfirst_occurence(t_list *lst, int (*f)(void *));
+int		ft_lstfirst_occurence_index(t_list *lst, int (*f)(void *));
 
 #endif
