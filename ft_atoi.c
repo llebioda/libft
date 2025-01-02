@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:35:11 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/02 10:18:14 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 10:40:39 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	ft_atoi(const char *nptr)
 
 	if (nptr == NULL)
 		return (0);
-	while (ft_isspace(*nptr))
+	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n'
+		|| *nptr == '\r' || *nptr == '\t' || *nptr == '\v')
 		nptr++;
 	is_negative = 0;
 	if (*nptr == '-')
@@ -65,7 +66,8 @@ int	ft_atoi_valid(const char *nptr)
 
 	if (nptr == NULL)
 		return (0);
-	while (ft_isspace(*nptr))
+	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n'
+		|| *nptr == '\r' || *nptr == '\t' || *nptr == '\v')
 		nptr++;
 	is_negative = 0;
 	if (*nptr == '-')

@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:35:11 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/02 10:18:13 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 10:40:40 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ long	ft_atol(const char *nptr)
 
 	if (nptr == NULL)
 		return (0);
-	while (ft_isspace(*nptr))
+	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n'
+		|| *nptr == '\r' || *nptr == '\t' || *nptr == '\v')
 		nptr++;
 	is_negative = 0;
 	if (*nptr == '-')
@@ -65,7 +66,8 @@ int	ft_atol_valid(const char *nptr)
 
 	if (nptr == NULL)
 		return (0);
-	while (ft_isspace(*nptr))
+	while (*nptr == ' ' || *nptr == '\f' || *nptr == '\n'
+		|| *nptr == '\r' || *nptr == '\t' || *nptr == '\v')
 		nptr++;
 	is_negative = 0;
 	if (*nptr == '-')
