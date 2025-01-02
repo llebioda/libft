@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:08:51 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/02 11:18:06 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 14:53:13 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,13 @@ char	*ft_strjoin_all(char const **tab, char const *sep)
 			j += ft_strlcpy(&(dst[j]), sep, total_len - j + 1);
 	}
 	return (dst);
+}
+
+char	*ft_strjoin_free(char *s1, char const *s2)
+{
+	char	*temp;
+
+	temp = ft_strjoin(s1, s2);
+	free(s1);
+	return (temp);
 }
