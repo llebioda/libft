@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:12:40 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/17 10:17:15 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:53:35 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*dst;
 	unsigned int	i;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	dst = malloc(ft_strlen(s) + 1);
 	if (dst == NULL)

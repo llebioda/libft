@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:47:13 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/23 12:56:39 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:52:34 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
+	if (dest == NULL || src == NULL)
+		return (dest);
 	i = 0;
 	while (src[i] != '\0')
 	{
@@ -30,6 +32,8 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int	i;
 
+	if (dest == NULL || src == NULL)
+		return (dest);
 	i = 0;
 	while (src[i] != '\0' && i < n)
 	{

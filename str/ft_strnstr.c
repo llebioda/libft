@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:27:32 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/23 18:19:11 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:54:49 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (little[0] == '\0')
+	if (!big || !little || little[0] == '\0')
 		return ((char *)big);
 	i = 0;
 	while (big[i] && i < len)

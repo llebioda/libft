@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:41:48 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/23 12:56:54 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/02 13:52:00 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strcat(char *dest, char *src)
 	unsigned int	i;
 	unsigned int	j;
 
+	if (dest == NULL || src == NULL)
+		return (dest);
 	i = 0;
 	while (dest[i] != '\0')
 		i++;
@@ -35,7 +37,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	unsigned int	i;
 	unsigned int	j;
 
-	if (nb == 0)
+	if (dest == NULL || src == NULL || nb == 0)
 		return (dest);
 	i = 0;
 	while (dest[i] != '\0')
