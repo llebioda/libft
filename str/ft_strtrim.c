@@ -6,13 +6,13 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:45:20 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/23 18:32:10 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/03 11:58:21 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count(char const *str, char const *set)
+static int	count(const char *str, const char *set)
 {
 	int	i;
 	int	last_i;
@@ -28,7 +28,7 @@ static int	count(char const *str, char const *set)
 	return (last_i + 1);
 }
 
-char	*ft_strtrim(char const *str, char const *set)
+char	*ft_strtrim(const char *str, const char *set)
 {
 	char	*dst;
 	int		len;

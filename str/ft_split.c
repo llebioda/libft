@@ -6,18 +6,17 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:09:02 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/23 13:50:22 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/03 12:08:42 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	split_str(char **tab, char const *str, char *sep, int tab_len);
-static int	copy(char **tab, char const *str, int *offset, int *len);
-static int	count(char const *str, char *sep);
-static char	*ft_strndup(char const *src, unsigned int n);
+static int	split_str(char **tab, const char *str, const char *sep, int tablen);
+static int	copy(char **tab, const char *str, int *offset, int *len);
+static int	count(const char *str, const char *sep);
 
-char	**ft_split(char const *s, char *set)
+char	**ft_split(const char *s, const char *set)
 {
 	char	**tab;
 	int		tab_len;
@@ -45,7 +44,7 @@ char	**ft_split(char const *s, char *set)
 	return (tab);
 }
 
-static int	split_str(char **tab, char const *str, char *sep, int tab_len)
+static int	split_str(char **tab, const char *str, const char *sep, int tablen)
 {
 	char	*s;
 	int		i;
@@ -56,7 +55,7 @@ static int	split_str(char **tab, char const *str, char *sep, int tab_len)
 	i = 0;
 	offset = 0;
 	len = 0;
-	while (*s && i < tab_len)
+	while (*s && i < tablen)
 	{
 		if (ft_strcontains(sep, *s++) == 1)
 		{
@@ -68,10 +67,12 @@ static int	split_str(char **tab, char const *str, char *sep, int tab_len)
 			len++;
 	}
 	tab[i] = ft_strndup(str + offset, len);
+	if (tab[i] == NULL)
+		return (0);
 	return (1);
 }
 
-static int	copy(char **tab, char const *str, int *offset, int *len)
+static int	copy(char **tab, const char *str, int *offset, int *len)
 {
 	char	*r;
 
@@ -84,7 +85,7 @@ static int	copy(char **tab, char const *str, int *offset, int *len)
 	return (1);
 }
 
-static int	count(char const *str, char *sep)
+static int	count(const char *str, const char *sep)
 {
 	int	count;
 	int	was_split;
@@ -106,27 +107,4 @@ static int	count(char const *str, char *sep)
 		str++;
 	}
 	return (count);
-}
-
-static char	*ft_strndup(char const *src, unsigned int n)
-{
-	char			*dest;
-	unsigned int	src_len;
-	unsigned int	i;
-
-	if (n == 0)
-		return (NULL);
-	src_len = 0;
-	while (src[src_len] && src_len < n)
-		src_len++;
-	dest = ft_calloc(src_len + 1, sizeof(char));
-	if (dest == NULL)
-		return (NULL);
-	i = 0;
-	while (i < src_len)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	return (dest);
 }

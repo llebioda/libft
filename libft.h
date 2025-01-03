@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/02 15:22:03 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/03 12:04:13 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,18 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strjoin3(char const *s1, char const *s2, char const *s3);
-char	*ft_strjoin_all(char const **tab, char const *sep);
+char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strjoin3(const char *s1, const char *s2, const char *s3);
+char	*ft_strjoin_all(const char **tab, const char *sep);
 char	*ft_strjoin_free(char *s1, char *s2);
 
-char	*ft_strdup(const char *s);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strdup(const char *src);
+char	*ft_strndup(const char *src, unsigned int n);
+char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strremove(const char *str, const char *set);
-char	*ft_strtrim(char const *str, char const *set);
-char	**ft_split(char const *s, char *set);
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_strtrim(const char *str, const char *set);
+char	**ft_split(const char *s, const char *set);
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 void	ft_putchar_fd(char c, int fd);
