@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/03 12:04:13 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:14:29 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ char	*ft_strjoin(const char *s1, const char *s2);
 char	*ft_strjoin3(const char *s1, const char *s2, const char *s3);
 char	*ft_strjoin_all(const char **tab, const char *sep);
 char	*ft_strjoin_free(char *s1, char *s2);
+char	*ft_strjoin3_free(char *s1, char *s2, char *s3);
 
 char	*ft_strdup(const char *src);
 char	*ft_strndup(const char *src, unsigned int n);
