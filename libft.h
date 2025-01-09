@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/06 15:14:29 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/09 16:24:12 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t siz);
 char	*ft_strcat(char *dest, char *src);
 char	*ft_strncat(char *dest, char *src, unsigned int nb);
 size_t	ft_strlcat(char *dst, const char *src, size_t siz);
+char	*ft_strrev(char *str);
 
 int		ft_strcontains(const char *str, char c);
 char	*ft_strchr(const char *s, int c);
@@ -70,6 +71,7 @@ char	*ft_strtrim(const char *str, const char *set);
 char	**ft_split(const char *s, const char *set);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_sort_str(char **tab);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
