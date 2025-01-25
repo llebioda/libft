@@ -6,13 +6,13 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:07:16 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/25 13:33:54 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/25 13:36:26 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_tab(char ***tab)
+void	ft_free_tab(char ***tab)
 {
 	char	**t;
 	int		i;
@@ -63,13 +63,13 @@ char	**ft_realloc_char_tab(char **tab, size_t new_size)
 
 	if (new_size == 0)
 	{
-		free_tab(&tab);
+		ft_free_tab(&tab);
 		return (NULL);
 	}
 	new_tab = ft_calloc(new_size + 1, sizeof(char *));
 	if (new_tab == NULL)
 	{
-		free_tab(&tab);
+		ft_free_tab(&tab);
 		return (NULL);
 	}
 	if (tab == NULL)
