@@ -6,9 +6,18 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 09:19:57 by llebioda          #+#    #+#             */
-/*   Updated: 2024/12/23 09:25:09 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/25 20:05:16 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_swap(int *a, int *b)
+{
+	int	temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
+}
 
 int	ft_abs(int value)
 {

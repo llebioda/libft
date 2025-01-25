@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/25 13:36:26 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/25 20:05:14 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
+void	ft_swap(int *a, int *b);
 int		ft_abs(int value);
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);
