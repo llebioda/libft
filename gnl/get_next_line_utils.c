@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/08 14:46:00 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/25 11:32:19 by llebioda         ###   ########.fr       */
+/*   Created: 2025/01/25 11:31:45 by llebioda          #+#    #+#             */
+/*   Updated: 2025/01/25 11:33:55 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <fcntl.h>
-# include <unistd.h>
-# include "libft.h"
+#include "get_next_line.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 100
-# endif
+void	close_gnl(int fd)
+{
+	char	*line;
 
-char	*get_next_line(int fd);
-void	close_gnl(int fd);
-
-#endif
+	if (fd < 0)
+		return ;
+	line = get_next_line(fd);
+	while (line != NULL)
+	{
+		free(line);
+		line = get_next_line(fd);
+	}
+	close(fd);
+}
