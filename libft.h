@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/09 17:01:25 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/25 11:19:59 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t siz);
 char	*ft_strrev(char *str);
 
 int		ft_strcontains(const char *str, char c);
+int		ft_strstartwith(const char *str, const char *start);
+int		ft_strendwith(const char *str, const char *end);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
