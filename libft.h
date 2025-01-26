@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/26 13:52:09 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/26 17:11:21 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_isspace(char c);
+int		is_empty_str(char *str);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
@@ -72,6 +73,7 @@ char	*ft_strndup(const char *src, unsigned int n);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strremove(const char *str, const char *set);
 char	*ft_strtrim(const char *str, const char *set);
+char	*ft_strtrim_space(const char *str);
 char	**ft_split(const char *s, const char *set);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));

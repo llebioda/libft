@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:45:20 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/03 11:58:21 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/26 17:11:14 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,9 @@ char	*ft_strtrim(const char *str, const char *set)
 	}
 	dst[i] = '\0';
 	return (dst);
+}
+
+char	*ft_strtrim_space(const char *str)
+{
+	return (ft_strtrim(str, " \f\n\r\t\v"));
 }
