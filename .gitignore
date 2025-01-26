@@ -1,0 +1,8 @@
+*a.out
+*.o
+*.d
+*.a
+*.h.gch
+*.swp
+.vscode*
+libft.a

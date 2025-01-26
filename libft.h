@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/25 20:05:14 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/26 13:52:09 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,13 @@ int		ft_abs(int value);
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);
 int		ft_clamp(int value, int min, int max);
+
+void	ft_swap_db(double *a, double *b);
+double	ft_abs_db(double value);
+double	ft_min_db(double a, double b);
+double	ft_max_db(double a, double b);
+double	ft_clamp_db(double value, double min, double max);
+
 int		*ft_range(int min, int max);
 int		ft_factorial(int nb);
 int		ft_power(int nb, int power);

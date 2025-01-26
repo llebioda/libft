@@ -1,50 +1,67 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_utils2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/23 09:19:57 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/25 20:05:16 by llebioda         ###   ########.fr       */
+/*   Created: 2024/12/23 11:07:16 by llebioda          #+#    #+#             */
+/*   Updated: 2024/12/23 11:12:30 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_swap(int *a, int *b)
-{
-	int	temp;
+#include <stdlib.h>
 
-	temp = *a;
-	*a = *b;
-	*b = temp;
+int	*ft_range(int min, int max)
+{
+	int	*tab;
+	int	i;
+
+	if (min >= max)
+		return (NULL);
+	tab = malloc(sizeof(int) * (max - min));
+	if (tab == NULL)
+		return (NULL);
+	i = 0;
+	while (i + min < max)
+	{
+		tab[i] = i + min;
+		i++;
+	}
+	return (tab);
 }
 
-int	ft_abs(int value)
+int	ft_factorial(int nb)
 {
-	if (value < 0)
-		return (-value);
-	return (value);
-}
+	int	a;
 
-int	ft_min(int a, int b)
-{
-	if (a > b)
-		return (b);
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	a = nb;
+	nb--;
+	while (nb > 1)
+	{
+		a *= nb;
+		nb--;
+	}
 	return (a);
 }
 
-int	ft_max(int a, int b)
+int	ft_power(int nb, int power)
 {
-	if (a < b)
-		return (b);
-	return (a);
-}
+	int	a;
 
-int	ft_clamp(int value, int min, int max)
-{
-	if (value < min)
-		return (min);
-	if (value > max)
-		return (max);
-	return (value);
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	a = 1;
+	while (power > 0)
+	{
+		a *= nb;
+		power--;
+	}
+	return (a);
 }
