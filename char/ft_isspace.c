@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:48:56 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/26 17:09:44 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:14:33 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_isspace(char c)
 		|| c == '\r' || c == '\t' || c == '\v');
 }
 
-int	is_empty_str(char *str)
+int	ft_is_empty_str(char *str)
 {
 	int	i;
 

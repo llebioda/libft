@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/27 10:59:02 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:14:15 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_isspace(char c);
-int		is_empty_str(char *str);
+int		ft_is_empty_str(char *str);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
