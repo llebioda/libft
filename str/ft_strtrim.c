@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 14:45:20 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/27 15:36:02 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:39:18 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char	*ft_strtrim_space(const char *str)
 	return (ft_strtrim(str, " \f\n\r\t\v"));
 }
 
-char	*ft_str_rtrim(const char *str, const char *set)
+char	*ft_str_ltrim(const char *str, const char *set)
 {
 	char	*dst;
 	int		len;
@@ -85,7 +85,7 @@ char	*ft_str_rtrim(const char *str, const char *set)
 	return (dst);
 }
 
-char	*ft_str_ltrim(const char *str, const char *set)
+char	*ft_str_rtrim(const char *str, const char *set)
 {
 	char	*dst;
 	int		len;

@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/27 15:36:19 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:39:23 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,8 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strremove(const char *str, const char *set);
 char	*ft_strtrim(const char *str, const char *set);
 char	*ft_strtrim_space(const char *str);
-char	*ft_str_rtrim(const char *str, const char *set);
 char	*ft_str_ltrim(const char *str, const char *set);
+char	*ft_str_rtrim(const char *str, const char *set);
 char	**ft_split(const char *s, const char *set);
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
