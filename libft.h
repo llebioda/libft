@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/01/27 15:39:23 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/02/02 11:34:09 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,10 @@ int		*ft_range(int min, int max);
 int		ft_factorial(int nb);
 int		ft_power(int nb, int power);
 
-void	ft_free_tab(char ***tab);
+void	ft_free_tab(void ***tab, void (*del)(void *));
 char	**ft_dup_char_array(char **array);
-char	**ft_realloc_char_tab(char **tab, size_t new_size);
+void	**ft_realloc_tab(void **tab, size_t new_size, void (*del)(void *));
+
 typedef struct s_list
 {
 	void			*content;
