@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 11:07:16 by llebioda          #+#    #+#             */
-/*   Updated: 2025/02/02 11:34:03 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/02/02 11:46:17 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,21 @@ void	ft_free_tab(void ***tab, void (*del)(void *))
 		while (t[i] != NULL)
 			(*del)(t[i++]);
 	}
+	free(t);
+}
+
+void	ft_free_char_tab(char ***tab)
+{
+	char	**t;
+	int		i;
+
+	if (tab == NULL || *tab == NULL)
+		return ;
+	t = *tab;
+	*tab = NULL;
+	i = 0;
+	while (t[i] != NULL)
+		free(t[i++]);
 	free(t);
 }
 
@@ -73,6 +88,34 @@ void	**ft_realloc_tab(void **tab, size_t new_size, void (*del)(void *))
 	if (new_tab == NULL)
 	{
 		ft_free_tab(&tab, del);
+		return (NULL);
+	}
+	if (tab == NULL)
+		return (new_tab);
+	i = 0;
+	while (tab[i] != NULL && i < new_size)
+	{
+		new_tab[i] = tab[i];
+		i++;
+	}
+	free(tab);
+	return (new_tab);
+}
+
+char	**ft_realloc_char_tab(char **tab, size_t new_size)
+{
+	char	**new_tab;
+	size_t	i;
+
+	if (new_size == 0)
+	{
+		ft_free_char_tab(&tab);
+		return (NULL);
+	}
+	new_tab = ft_calloc(new_size + 1, sizeof(char *));
+	if (new_tab == NULL)
+	{
+		ft_free_char_tab(&tab);
 		return (NULL);
 	}
 	if (tab == NULL)
