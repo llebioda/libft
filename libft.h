@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/02/03 11:24:42 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/02/14 15:59:18 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,9 @@ long	ft_atol(const char *nptr);
 int		ft_atol_valid(const char *nptr);
 long	ft_atol_safe(const char *nptr, long error_ret_val);
 char	*ft_itoa(int n);
+
+char	*ft_dtoa(double num, int precision);
+double	ft_atod(const char *nptr);
 
 size_t	ft_strlen(const char *s);
 int		ft_strcmp(const char *s1, const char *s2);
