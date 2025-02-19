@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/02/14 15:59:18 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/02/19 11:05:10 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-void	ft_lstsort(t_list **lst, int (*cmp)(void *, void *));
+void	ft_lstsort(t_list **lst, int (*cmp)(void *v1, void *v2, void *params),
+			void *params);
 
 void	*ft_lstpop(t_list **lst, int index);
 t_list	*ft_lstinsert(t_list **lst, int index, void *content);
