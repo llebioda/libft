@@ -6,7 +6,7 @@
 /*   By: llebioda <llebioda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 16:18:12 by llebioda          #+#    #+#             */
-/*   Updated: 2025/02/19 11:05:10 by llebioda         ###   ########.fr       */
+/*   Updated: 2025/07/08 11:52:10 by llebioda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,18 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-
 void	*ft_calloc(size_t nmemb, size_t size);
+
 int		ft_atoi(const char *nptr);
 int		ft_atoi_valid(const char *nptr);
 int		ft_atoi_safe(const char *nptr, int error_ret_val);
+char	*ft_itoa(int n);
+
 long	ft_atol(const char *nptr);
 int		ft_atol_valid(const char *nptr);
 long	ft_atol_safe(const char *nptr, long error_ret_val);
-char	*ft_itoa(int n);
+char	*ft_ltoa(long nb);
+char	*ft_ultoa(unsigned long nb);
 
 char	*ft_dtoa(double num, int precision);
 double	ft_atod(const char *nptr);
