@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror $(EXTRA_CFLAGS)
 
 SRCSFILES =	ft_atoi.c ft_atol.c ft_atod.c ft_itoa.c ft_ltoa.c ft_dtoa.c ft_bzero.c ft_calloc.c ft_utils.c ft_utils_int.c ft_utils_double.c ft_tab_utils.c \
 			char/ft_isalnum.c char/ft_isalpha.c char/ft_isascii.c char/ft_isdigit.c char/ft_isprint.c char/ft_isspace.c char/ft_tolower.c char/ft_toupper.c \
