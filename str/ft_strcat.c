@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, char *src)
+char	*ft_strcat(char *dest, const char *src)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -32,7 +32,7 @@ char	*ft_strcat(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, const char *src, unsigned int nb)
 {
 	unsigned int	i;
 	unsigned int	j;

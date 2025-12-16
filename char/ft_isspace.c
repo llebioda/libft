@@ -16,7 +16,7 @@ int	ft_isspace(char c)
 		|| c == '\r' || c == '\t' || c == '\v');
 }
 
-int	ft_is_empty_str(char *str)
+int	ft_is_empty_str(const char *str)
 {
 	int	i;
 

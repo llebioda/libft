@@ -22,7 +22,7 @@ int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_isspace(char c);
-int		ft_is_empty_str(char *str);
+int		ft_is_empty_str(const char *str);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
@@ -53,11 +53,11 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strcmp_alpha(const char *s1, const char *s2);
 int		ft_strncmp_alpha(const char *s1, const char *s2, size_t n);
-char	*ft_strcpy(char *dest, char *src);
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
+char	*ft_strcpy(char *dest, const char *src);
+char	*ft_strncpy(char *dest, const char *src, unsigned int n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t siz);
-char	*ft_strcat(char *dest, char *src);
-char	*ft_strncat(char *dest, char *src, unsigned int nb);
+char	*ft_strcat(char *dest, const char *src);
+char	*ft_strncat(char *dest, const char *src, unsigned int nb);
 size_t	ft_strlcat(char *dst, const char *src, size_t siz);
 char	*ft_strrev(char *str);
 
@@ -90,8 +90,8 @@ void	ft_sort_str(char **tab);
 void	ft_custom_sort_str(char **tab, int (*cmp)(const char *, const char *));
 
 void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
+void	ft_putstr_fd(const char *s, int fd);
+void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 void	ft_swap(int *a, int *b);
